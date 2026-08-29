@@ -1,0 +1,122 @@
+/* Stage — the single active landing-page design. Mobile-first. */
+.concept{overflow-x:hidden}
+.concept .container{width:min(calc(100% - 20px),1220px)}
+.concept .site-header,.concept .nav,.concept .button,.concept .result-card,.concept .reason-grid article,.concept .comparison-card,.concept details,.concept .cta-panel{transition:background-color .2s ease,border-color .2s ease,transform .2s ease,color .2s ease}
+.concept .button{min-height:58px;padding:17px 26px;font-size:15px;letter-spacing:-.01em}
+.concept .button:hover{transform:translateY(-2px)}
+.concept .button-small{min-height:46px;padding:12px 18px;font-size:13px}
+.concept .hero-actions .button,.concept .button-wide,.concept .comparison-result .button,.concept .cta-action .button{min-width:0;min-height:60px;padding:18px 28px;font-size:16px}
+.concept .hero-actions{display:flex}
+.concept .hero-video{width:100%;margin:0;aspect-ratio:16/9}
+.concept .hero-video iframe{transform:none!important}
+.concept .section-heading{max-width:none}
+.concept .section-heading>p{max-width:580px}
+.concept .result-copy p:not(.role){display:block}
+.concept .comparison-card,.concept .comparison-top,.concept .comparison-result{display:block;text-align:inherit;align-items:initial}
+.concept .comparison-top>*,.concept .comparison-result>*{margin-left:0;margin-right:0;text-align:inherit}
+.concept .comparison-result .button{display:inline-flex;width:auto}
+.concept .cta-action img:first-child,.concept .cta-action img:last-child{transform:none}
+
+.concept-stage{--bg:#f4f4ef;--surface:#fff;--ink:#121813;--muted:#657067;--line:#cbd3cc;--green:#18bd62;--green-dark:#08713a;--lime:#d9ff64;background:#f4f4ef;color:#121813}
+.concept-stage .site-header{padding:7px 0;background:rgba(244,244,239,.95);border-bottom:1px solid #cfd6d0;box-shadow:none}
+.concept-stage .nav{height:58px;padding:5px 7px 5px 10px;border:0;border-radius:0;background:transparent}
+.concept-stage .brand{min-width:0}
+.concept-stage .brand img{width:92px;height:42px}
+.concept-stage .nav-links{display:none}
+.concept-stage .button{border:0;border-radius:999px;background:#122219;color:#fff;box-shadow:none;font-weight:800}
+.concept-stage .button:hover{background:#08713a}
+.concept-stage .nav .button-small{width:132px;min-width:132px;min-height:42px;padding:9px;font-size:0}
+.concept-stage .nav .button-small::after{content:'I’m interested';font-size:10px}
+.concept-stage .hero{position:relative;padding:44px 0 62px;background:radial-gradient(circle at 50% 47%,#d9f4df,transparent 44%),#f4f4ef}
+.concept-stage .hero-inner{display:flex;flex-direction:column;align-items:center;max-width:none;text-align:center}
+.concept-stage .hero-intro{order:1;margin:0 0 12px;padding:7px 12px;border:1px solid #b9c9bd;border-radius:999px;background:#fff;color:#42604c;font:700 11px/1.45 Inter}
+.concept-stage .hero-intro strong{color:#08713a}
+.concept-stage .hero h1{order:2;max-width:980px;margin:0;font:800 clamp(38px,10.5vw,56px)/.98 Manrope;letter-spacing:-.06em}
+.concept-stage .hero h1 span{color:#121813}
+.concept-stage .hero h1 em{margin-top:7px;color:#0a9b4d;font-style:normal;white-space:normal}
+.concept-stage .hero-promise{order:3;width:min(100%,700px);margin:16px auto 0;padding:0;border:0;text-align:center}
+.concept-stage .hero-promise strong{color:#08713a;font-size:11px;text-transform:uppercase}
+.concept-stage .hero-promise span{margin-top:3px;color:#5e6e64;font-size:12px}
+.concept-stage .hero-video{order:4;width:min(100%,1000px);margin:22px auto 0;padding:7px;border:1px solid #b9c9bd;border-radius:22px;background:#fff;box-shadow:0 28px 70px rgba(25,72,39,.17)}
+.concept-stage .hero-video iframe,.concept-stage .video-thumbnail,.concept-stage .video-play-overlay{inset:7px;width:calc(100% - 14px);height:calc(100% - 14px);border-radius:15px}
+.concept-stage .video-play-overlay{background:linear-gradient(180deg,transparent,rgba(7,22,12,.48))}
+.concept-stage .video-play-overlay .play-icon{border:0;border-radius:50%;background:var(--lime);color:#122219}
+.concept-stage .video-tools{left:13px;right:13px;justify-content:center;border-radius:999px}
+.concept-stage .thumbnail-replace{display:none}
+.concept-stage .hero-actions{order:5;width:100%;align-items:center;gap:9px;margin-top:21px}
+.concept-stage .hero-actions .button{width:100%;max-width:360px;background:#18bd62}
+.concept-stage .text-link{color:#365344;font-size:11px;font-weight:800}
+.concept-stage .availability{order:6;margin:13px 0 0;color:#69796f;font-size:11px}
+.concept-stage .proof-strip{padding:18px 0;background:#e6eee8}
+.concept-stage .proof-grid{grid-template-columns:1fr;gap:8px}
+.concept-stage .proof-grid div{padding:18px 15px 18px 60px;border:1px solid #c2d0c5!important;border-radius:14px;background:#fff;box-shadow:none}
+.concept-stage .proof-grid b{left:15px;top:18px;border-radius:50%;background:#dcf7e3;color:#08713a}
+.concept-stage .section{padding:68px 0}
+.concept-stage .eyebrow{color:#08713a}
+.concept-stage h2{font-size:clamp(40px,11vw,64px);line-height:.98;letter-spacing:-.06em}
+.concept-stage .section-heading{display:block;margin-bottom:32px}
+.concept-stage .section-heading>p{margin-top:13px;color:#657168;text-align:left}
+.concept-stage .results-grid{grid-template-columns:1fr;gap:12px}
+.concept-stage .result-card{border:1px solid #c6d1c8;border-radius:18px;background:#fff;box-shadow:0 12px 30px rgba(20,62,32,.06)}
+.concept-stage .number{border-radius:999px;background:#dff5e5;color:#08713a}
+.concept-stage .result-copy strong{background:#e2f6e7;color:#08713a}
+.concept-stage .section-tint{background:#173724;color:#fff}
+.concept-stage .reason-heading{position:static}
+.concept-stage .reason-heading h2{color:#fff}
+.concept-stage .reason-heading>p:last-child{color:#b4c6ba}
+.concept-stage .reason-grid{grid-template-columns:1fr;gap:8px}
+.concept-stage .reason-grid article{grid-template-columns:54px 1fr;gap:14px;padding:20px;border:1px solid #365544;border-radius:14px;background:#20462f}
+.concept-stage .reason-grid span{margin:0;border-radius:50%;background:var(--lime);color:#173724}
+.concept-stage .reason-grid h3{color:#fff}
+.concept-stage .reason-grid p{color:#b8cabd}
+.concept-stage .comparison-card{display:block;border:0;border-radius:22px;background:#fff;box-shadow:0 18px 45px rgba(22,62,34,.08)}
+.concept-stage .comparison-top,.concept-stage .comparison-result{padding:30px 22px}
+.concept-stage .comparison-result{border:0;background:linear-gradient(145deg,#caffd5,#edffc2)}
+.concept-stage .comparison-result h3{font-size:42px;line-height:.95}
+.concept-stage .comparison-result p{color:#4f6758}
+.concept-stage .comparison-result .button{width:100%}
+.concept-stage .faq-grid{grid-template-columns:1fr;gap:28px}
+.concept-stage .faq-list{display:grid;gap:8px}
+.concept-stage details{padding:18px;border:1px solid #c5d1c8;border-radius:13px;background:#fff}
+.concept-stage details p{color:#637067}
+.concept-stage .final-cta{background:#e3ece5}
+.concept-stage .cta-panel{padding:42px 20px;border:0;border-radius:22px;background:#18a957;color:#fff}
+.concept-stage .cta-content h2,.concept-stage .cta-content .eyebrow{color:#fff}
+.concept-stage .cta-action{gap:0}
+.concept-stage .cta-action img{width:42px;height:42px}
+.concept-stage .cta-action .button{width:auto;min-width:220px;background:#fff;color:#173724}
+.concept-stage footer{background:#173724;border:0;color:#9fb3a5}
+.concept-stage footer a{color:#fff}
+
+@media(min-width:700px){
+  .concept .container{width:min(calc(100% - 48px),1220px)}
+  .concept-stage .site-header{padding:10px 0}
+  .concept-stage .nav{height:68px;padding:7px 10px 7px 18px}
+  .concept-stage .brand img{width:140px;height:52px}
+  .concept-stage .nav .button-small{width:auto;min-width:188px;min-height:48px;padding:13px 18px;font-size:12px}
+  .concept-stage .nav .button-small::after{display:none}
+  .concept-stage .section{padding:92px 0}
+  .concept-stage .proof-grid{grid-template-columns:repeat(3,1fr)}
+  .concept-stage .proof-grid div{border-bottom:0!important}
+  .concept-stage .section-heading{display:grid;grid-template-columns:1fr .7fr;align-items:end;gap:60px}
+  .concept-stage .section-heading>p{margin:0}
+  .concept-stage .results-grid{grid-template-columns:1fr 1fr}
+  .concept-stage .reason-layout{display:grid;grid-template-columns:.82fr 1.18fr;gap:70px}
+  .concept-stage .comparison-card{display:grid;grid-template-columns:.9fr 1.1fr}
+  .concept-stage .comparison-result{border-top:0}
+  .concept-stage .faq-grid{grid-template-columns:.8fr 1.2fr;gap:70px}
+}
+
+@media(min-width:1000px){
+  .concept-stage .nav-links{display:flex;position:static;transform:none;border:0;background:transparent}
+  .concept-stage .nav-links a{padding:9px 16px;color:#385247;font-size:12px;font-weight:800}
+  .concept-stage .hero{padding:54px 0 68px}
+  .concept-stage .hero h1{font-size:clamp(48px,4.4vw,66px)}
+  .concept-stage .hero-video{margin-top:24px}
+  .concept-stage .hero-actions{flex-direction:row;justify-content:center}
+  .concept-stage .hero-actions .button{width:auto;min-width:340px}
+  .concept-stage .results-grid{grid-template-columns:repeat(4,1fr)}
+  .concept-stage .result-copy{padding:19px}
+  .concept-stage .result-copy h3{font-size:22px}
+  .concept-stage .result-copy p{font-size:12px}
+}
