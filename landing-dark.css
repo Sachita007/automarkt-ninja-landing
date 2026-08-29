@@ -1,0 +1,412 @@
+/* Dark landing variant — preserves V2 structure and media. */
+.concept-stage.concept-dark {
+  --bg: #07110d;
+  --surface: #102018;
+  --ink: #f2f7f3;
+  --muted: #a8b8ae;
+  --line: #294234;
+  --green: #18bd62;
+  --green-dark: #0b8e48;
+  --lime: #d9ff64;
+  color-scheme: dark;
+  background: #07110d;
+  color: #f2f7f3;
+}
+
+.concept-stage.concept-dark .site-header {
+  background: rgba(7, 17, 13, 0.84);
+  border-bottom: 1px solid rgba(147, 180, 158, 0.1);
+}
+
+.concept-stage.concept-dark .nav {
+  border-color: #294234;
+  background: rgba(14, 29, 20, 0.94);
+  box-shadow: 0 14px 36px rgba(0, 0, 0, 0.24);
+}
+
+.concept-stage.concept-dark .nav-links a {
+  color: #c3d0c7;
+}
+
+.concept-stage.concept-dark .nav-links a:hover {
+  background: #193725;
+  color: #d9ff64;
+}
+
+.concept-stage.concept-dark .button {
+  background: #18bd62;
+  color: #07110d;
+}
+
+.concept-stage.concept-dark .button:hover {
+  background: #d9ff64;
+  color: #07110d;
+}
+
+.concept-stage.concept-dark .hero {
+  position: relative;
+  overflow: hidden;
+  background:
+    radial-gradient(circle at 50% 42%, rgba(24, 189, 98, 0.17), transparent 37%),
+    radial-gradient(circle at 8% 18%, rgba(217, 255, 100, 0.055), transparent 22%),
+    linear-gradient(180deg, #07110d 0%, #0b1b13 100%);
+}
+
+.concept-stage.concept-dark .hero::before {
+  content: "";
+  position: absolute;
+  top: 8%;
+  left: 50%;
+  width: min(86vw, 1120px);
+  height: min(86vw, 1120px);
+  border: 1px solid rgba(24, 189, 98, 0.08);
+  border-radius: 50%;
+  box-shadow: 0 0 0 90px rgba(24, 189, 98, 0.018), 0 0 0 180px rgba(24, 189, 98, 0.012);
+  pointer-events: none;
+  transform: translateX(-50%);
+}
+
+.concept-stage.concept-dark .hero-inner {
+  position: relative;
+  z-index: 1;
+}
+
+.concept-stage.concept-dark .hero-intro {
+  border-color: #31543d;
+  background: rgba(17, 40, 26, 0.88);
+  color: #cad8cf;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.16);
+}
+
+.concept-stage.concept-dark .hero-intro strong {
+  color: #d9ff64;
+}
+
+.concept-stage.concept-dark .hero h1 span {
+  color: #f6faf7;
+}
+
+.concept-stage.concept-dark .hero h1 em {
+  color: #18dd70;
+  text-shadow: 0 14px 48px rgba(24, 189, 98, 0.2);
+}
+
+.concept-stage.concept-dark .hero-promise strong {
+  color: #d9ff64;
+}
+
+.concept-stage.concept-dark .hero-promise span {
+  color: #b7c6bc;
+}
+
+.concept-stage.concept-dark .hero-video {
+  border: 1px solid #31523c;
+  background: #030805;
+  box-shadow: 0 28px 70px rgba(0, 0, 0, 0.38), 0 0 0 7px rgba(24, 189, 98, 0.035);
+}
+
+.concept-stage.concept-dark .hero-actions .button {
+  background: #18bd62;
+  color: #07110d;
+  box-shadow: 0 14px 32px rgba(24, 189, 98, 0.18);
+}
+
+.concept-stage.concept-dark .text-link {
+  border-color: #365543;
+  background: #102219;
+  color: #dce7df;
+}
+
+.concept-stage.concept-dark .text-link:hover {
+  border-color: #18bd62;
+  background: #173725;
+}
+
+.concept-stage.concept-dark .availability {
+  border-left-color: #d9ff64;
+  background: rgba(16, 34, 25, 0.86);
+  color: #b6c5bb;
+}
+
+.concept-stage.concept-dark .proof-strip {
+  background: #050c08;
+}
+
+.concept-stage.concept-dark .proof-grid div {
+  border-color: #294234 !important;
+  background: #0f2117;
+  box-shadow: 0 10px 28px rgba(0, 0, 0, 0.16);
+}
+
+.concept-stage.concept-dark .proof-grid b {
+  background: #d9ff64;
+  color: #173724;
+}
+
+.concept-stage.concept-dark .proof-grid strong {
+  color: #fff;
+}
+
+.concept-stage.concept-dark .proof-grid span {
+  color: #9dafA3;
+}
+
+.concept-stage.concept-dark .section {
+  border-top: 1px solid rgba(143, 174, 153, 0.08);
+}
+
+.concept-stage.concept-dark .eyebrow {
+  color: #72e99e;
+}
+
+.concept-stage.concept-dark h2,
+.concept-stage.concept-dark h3 {
+  color: #f5f9f6;
+}
+
+.concept-stage.concept-dark .section-heading > p,
+.concept-stage.concept-dark .reason-heading > p:last-child {
+  color: #9fafA5;
+}
+
+.concept-stage.concept-dark #results,
+.concept-stage.concept-dark .comparison,
+.concept-stage.concept-dark #faq {
+  background: #0a1510;
+}
+
+.concept-stage.concept-dark .result-card {
+  border-color: #294234;
+  background: #102219;
+  box-shadow: 0 16px 42px rgba(0, 0, 0, 0.2);
+}
+
+.concept-stage.concept-dark .result-card:hover {
+  border-color: #4c795d;
+}
+
+.concept-stage.concept-dark .result-copy h3 {
+  color: #fff;
+}
+
+.concept-stage.concept-dark .result-copy .role,
+.concept-stage.concept-dark .result-copy p {
+  color: #a9b9ae;
+}
+
+.concept-stage.concept-dark .number {
+  background: #193d28;
+  color: #8df0af;
+}
+
+.concept-stage.concept-dark .result-copy strong {
+  background: #173d27;
+  color: #a6ffc4;
+}
+
+.concept-stage.concept-dark .youtube-showcase {
+  background:
+    radial-gradient(circle at 92% 8%, rgba(217, 255, 100, 0.07), transparent 28%),
+    #11271a;
+}
+
+.concept-stage.concept-dark .youtube-showcase::before {
+  border-color: rgba(217, 255, 100, 0.11);
+  box-shadow: 0 0 0 52px rgba(217, 255, 100, 0.018), 0 0 0 104px rgba(217, 255, 100, 0.012);
+}
+
+.concept-stage.concept-dark .youtube-card {
+  border-color: #35543f;
+  background: #0b1811;
+  box-shadow: 0 18px 42px rgba(0, 0, 0, 0.22);
+}
+
+.concept-stage.concept-dark .youtube-card:hover,
+.concept-stage.concept-dark .youtube-card:focus-within {
+  border-color: #5d886b;
+  box-shadow: 0 22px 48px rgba(0, 0, 0, 0.3);
+}
+
+.concept-stage.concept-dark .youtube-card-copy h3 {
+  color: #f4f8f5;
+}
+
+.concept-stage.concept-dark .youtube-card-copy span {
+  background: #193d28;
+  color: #9af3b9;
+}
+
+.concept-stage.concept-dark .instagram-showcase {
+  border-top-color: #223d2c;
+  background:
+    radial-gradient(circle at 8% 12%, rgba(217, 255, 100, 0.07), transparent 27%),
+    radial-gradient(circle at 90% 84%, rgba(24, 189, 98, 0.1), transparent 30%),
+    #080f0b;
+  color: #f2f7f3;
+}
+
+.concept-stage.concept-dark .instagram-showcase .eyebrow {
+  color: #d9ff64;
+}
+
+.concept-stage.concept-dark .instagram-showcase h2 {
+  color: #fff;
+}
+
+.concept-stage.concept-dark .instagram-showcase .section-heading > p {
+  color: #a7b8ad;
+}
+
+.concept-stage.concept-dark .instagram-card {
+  border-color: #31513b;
+  background: #102219;
+  box-shadow: 0 20px 46px rgba(0, 0, 0, 0.26);
+}
+
+.concept-stage.concept-dark .instagram-showcase .button-light {
+  background: #d9ff64;
+  color: #173724;
+}
+
+.concept-stage.concept-dark .instagram-showcase .button-light:hover {
+  background: #fff;
+  color: #08713a;
+}
+
+.concept-stage.concept-dark .section-tint {
+  border-top-color: #31533d;
+  background:
+    radial-gradient(circle at 12% 15%, rgba(217, 255, 100, 0.055), transparent 25%),
+    #173724;
+}
+
+.concept-stage.concept-dark .reason-grid article {
+  border-color: #41634d;
+  background: #20462f;
+}
+
+.concept-stage.concept-dark .reason-grid p {
+  color: #b8cabd;
+}
+
+.concept-stage.concept-dark .comparison-card {
+  background: #102219;
+  box-shadow: 0 20px 52px rgba(0, 0, 0, 0.25);
+}
+
+.concept-stage.concept-dark .comparison-top {
+  background: #102219;
+}
+
+.concept-stage.concept-dark .comparison-top h2 {
+  color: #fff;
+}
+
+.concept-stage.concept-dark .comparison-top p {
+  color: #a7b7ac;
+}
+
+.concept-stage.concept-dark .comparison-result {
+  background: linear-gradient(145deg, #b9fbc9, #d9ff64);
+  color: #173724;
+}
+
+.concept-stage.concept-dark .comparison-result h3 {
+  color: #173724;
+}
+
+.concept-stage.concept-dark .comparison-result p {
+  color: #3e5a48;
+}
+
+.concept-stage.concept-dark details {
+  border-color: #2e4a38;
+  background: #102219;
+}
+
+.concept-stage.concept-dark details summary {
+  color: #f2f7f3;
+}
+
+.concept-stage.concept-dark details p {
+  color: #a8b8ae;
+}
+
+.concept-stage.concept-dark .final-cta {
+  background: #07110d;
+}
+
+.concept-stage.concept-dark .cta-panel {
+  border-color: rgba(217, 255, 100, 0.13);
+  background:
+    radial-gradient(circle at 18% 20%, rgba(217, 255, 100, 0.14), transparent 28%),
+    radial-gradient(circle at 86% 82%, rgba(255, 255, 255, 0.08), transparent 30%),
+    linear-gradient(135deg, #0e7c3d, #18a957);
+  box-shadow: 0 24px 60px rgba(0, 0, 0, 0.25);
+}
+
+.concept-stage.concept-dark .site-footer {
+  border-top-color: #294234;
+  background: #050c08;
+  color: #eef5f0;
+}
+
+.concept-stage.concept-dark .landing-footer-brand p,
+.concept-stage.concept-dark .landing-footer-bottom p {
+  color: #8fa197;
+}
+
+.concept-stage.concept-dark .landing-footer-links strong,
+.concept-stage.concept-dark .landing-footer-bottom a {
+  color: #8be9ab;
+}
+
+.concept-stage.concept-dark .landing-footer-links a {
+  color: #c6d3ca;
+}
+
+.concept-stage.concept-dark .landing-footer-bottom {
+  border-top-color: #20372a;
+}
+
+.concept-stage.concept-dark .landing-footer-cta {
+  background: #d9ff64;
+  color: #173724;
+}
+
+.concept-stage.concept-dark .landing-footer-cta:hover {
+  background: #fff;
+  color: #08713a;
+}
+
+@media (min-width: 1000px) {
+  .concept-stage.concept-dark .hero h1 {
+    max-width: 960px;
+    font-size: clamp(52px, 5.1vw, 74px);
+  }
+
+  .concept-stage.concept-dark .hero-promise {
+    width: min(100%, 880px);
+  }
+}
+
+@media (max-width: 699px) {
+  .concept-stage.concept-dark .hero::before {
+    top: 18%;
+    width: 130vw;
+    height: 130vw;
+    box-shadow: 0 0 0 48px rgba(24, 189, 98, 0.018), 0 0 0 96px rgba(24, 189, 98, 0.012);
+  }
+
+  .concept-stage.concept-dark .hero-intro {
+    border-color: #31543d;
+  }
+
+  .concept-stage.concept-dark .hero h1 {
+    font-size: clamp(38px, 10.8vw, 46px);
+  }
+
+  .concept-stage.concept-dark .proof-grid div {
+    border-color: #294234 !important;
+  }
+}
