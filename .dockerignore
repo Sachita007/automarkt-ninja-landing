@@ -1,0 +1,7 @@
+.git
+.gitignore
+.github
+*.md
+*-backup.*
+stage-v2-base.css
+*-preview.png
