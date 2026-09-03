@@ -296,13 +296,11 @@
 
 .selected-hero-page .selected-logo img {
   position: absolute;
-  top: 50%;
-  left: 50%;
-  width: 150px;
-  height: 150px;
+  inset: 0;
+  width: 100%;
+  height: 100%;
   max-width: none;
   object-fit: contain;
-  transform: translate(-50%, -50%);
 }
 
 .selected-hero-page.concept-stage .hero-selected {
@@ -419,10 +417,6 @@
     height: 52px;
   }
 
-  .selected-hero-page .selected-logo img {
-    width: 116px;
-    height: 116px;
-  }
 
   .selected-hero-page.concept-stage .hero-selected {
     padding: 50px 0 58px;
