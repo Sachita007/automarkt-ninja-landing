@@ -272,3 +272,204 @@
     border-radius: 9px;
   }
 }
+
+/* Selected hero — centered logo, focused statement, no hero media. */
+.selected-hero-page .selected-header {
+  position: relative;
+  padding: 14px 0;
+}
+
+.selected-hero-page .selected-logo-row {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 72px;
+}
+
+.selected-hero-page .selected-logo {
+  position: relative;
+  display: block;
+  width: 176px;
+  height: 64px;
+  overflow: hidden;
+}
+
+.selected-hero-page .selected-logo img {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 150px;
+  height: 150px;
+  max-width: none;
+  object-fit: contain;
+  transform: translate(-50%, -50%);
+}
+
+.selected-hero-page.concept-stage .hero-selected {
+  min-height: 0;
+  padding: clamp(72px, 7vw, 104px) 0 78px;
+}
+
+.selected-hero-page .hero-selected .hero-inner {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+}
+
+.selected-hero-page .hero-selected .hero-inner > * {
+  order: initial;
+}
+
+.selected-hero-page.concept-stage .hero-selected h1 {
+  width: 100%;
+  max-width: 1100px;
+  margin: 0;
+  color: #0a9b4d;
+  font: 800 clamp(48px, 3.55vw, 54px)/1.03 Manrope, sans-serif;
+  letter-spacing: -0.055em;
+  text-wrap: balance;
+}
+
+.selected-hero-page.concept-stage .hero-selected h1 span,
+.selected-hero-page.concept-stage .hero-selected h1 em {
+  display: block;
+  color: inherit;
+}
+
+.selected-hero-page.concept-stage .hero-selected h1 em {
+  margin-top: 8px;
+  font-style: normal;
+  white-space: nowrap;
+}
+
+.selected-hero-page .hero-selected .hero-rule {
+  width: min(360px, 44vw);
+  height: 1px;
+  margin-top: 30px;
+  background: linear-gradient(90deg, transparent, rgba(10, 155, 77, 0.5), transparent);
+}
+
+.selected-hero-page.concept-stage .hero-selected .hero-promise {
+  width: min(100%, 840px);
+  margin: 28px 0 0;
+  padding: 0;
+  border: 0;
+  text-align: center;
+}
+
+.selected-hero-page.concept-stage .hero-selected .hero-promise strong {
+  color: #294837;
+  font-size: clamp(15px, 1.2vw, 18px);
+  line-height: 1.35;
+  letter-spacing: -0.01em;
+  text-transform: none;
+}
+
+.selected-hero-page.concept-stage .hero-selected .hero-promise span {
+  margin-top: 10px;
+  color: #52665a;
+  font-size: clamp(16px, 1.35vw, 19px);
+  line-height: 1.5;
+}
+
+.selected-hero-page.concept-stage .hero-selected .hero-actions {
+  display: flex;
+  flex-direction: row;
+  width: auto;
+  align-items: center;
+  gap: 12px;
+  margin-top: 30px;
+}
+
+.selected-hero-page.concept-stage .hero-selected .hero-actions .button {
+  width: auto;
+  min-width: 270px;
+  min-height: 62px;
+  padding: 18px 26px;
+  font-size: 16px;
+}
+
+.selected-hero-page.concept-stage .hero-selected .text-link {
+  min-height: 62px;
+}
+
+.selected-hero-page.concept-stage .hero-selected .availability {
+  width: min(100%, 680px);
+  margin-top: 14px;
+}
+
+@media (max-width: 900px) {
+  .selected-hero-page.concept-stage .hero-selected h1 em {
+    white-space: normal;
+  }
+}
+
+@media (max-width: 600px) {
+  .selected-hero-page .selected-header {
+    padding: 8px 0;
+  }
+
+  .selected-hero-page .selected-logo-row {
+    min-height: 58px;
+  }
+
+  .selected-hero-page .selected-logo {
+    width: 132px;
+    height: 52px;
+  }
+
+  .selected-hero-page .selected-logo img {
+    width: 116px;
+    height: 116px;
+  }
+
+  .selected-hero-page.concept-stage .hero-selected {
+    padding: 50px 0 58px;
+  }
+
+  .selected-hero-page.concept-stage .hero-selected h1 {
+    font-size: clamp(34px, 9vw, 42px);
+    line-height: 1.06;
+    letter-spacing: -0.05em;
+  }
+
+  .selected-hero-page.concept-stage .hero-selected h1 em {
+    margin-top: 13px;
+  }
+
+  .selected-hero-page .hero-selected .hero-rule {
+    margin-top: 25px;
+  }
+
+  .selected-hero-page.concept-stage .hero-selected .hero-promise {
+    margin-top: 22px;
+  }
+
+  .selected-hero-page.concept-stage .hero-selected .hero-promise strong {
+    font-size: 14px;
+  }
+
+  .selected-hero-page.concept-stage .hero-selected .hero-promise span {
+    font-size: 15px;
+  }
+
+  .selected-hero-page.concept-stage .hero-selected .hero-actions {
+    display: grid;
+    width: 100%;
+    gap: 10px;
+    margin-top: 24px;
+  }
+
+  .selected-hero-page.concept-stage .hero-selected .hero-actions .button,
+  .selected-hero-page.concept-stage .hero-selected .text-link {
+    width: 100%;
+    min-width: 0;
+    min-height: 58px;
+  }
+
+  .selected-hero-page.concept-stage .hero-selected .availability {
+    margin-top: 12px;
+    font-size: 12px;
+  }
+}

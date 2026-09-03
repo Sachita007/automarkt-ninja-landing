@@ -92,3 +92,100 @@ if (iframe && window.Vimeo) {
     }
   });
 }
+
+const bookingTriggers = document.querySelectorAll('a[href="booking.html"]');
+
+if (bookingTriggers.length) {
+  const bookingCalendarUrl = 'https://api.leadconnectorhq.com/widget/booking/o9kDHMNSM46WSdjHf0G5';
+  const bookingModal = document.createElement('dialog');
+  bookingModal.className = 'booking-modal';
+  bookingModal.id = 'booking-modal';
+  bookingModal.setAttribute('aria-labelledby', 'booking-modal-title');
+  bookingModal.innerHTML = `
+    <div class="booking-modal-panel">
+      <header class="booking-modal-header">
+        <div>
+          <p>Free strategy session</p>
+          <h2 id="booking-modal-title">Book your free audit call.</h2>
+        </div>
+        <button class="booking-modal-close" type="button" aria-label="Close booking calendar">
+          <span aria-hidden="true">×</span>
+        </button>
+      </header>
+      <div class="booking-modal-frame">
+        <p class="booking-modal-loading" role="status">Loading live availability…</p>
+        <iframe
+          data-src="${bookingCalendarUrl}"
+          title="Schedule a free Automarkt Ninja audit call"
+          scrolling="no"></iframe>
+      </div>
+      <p class="booking-modal-note">
+        By scheduling, you agree to our <a href="privacy-policy.html">Privacy Policy</a> and
+        <a href="terms-of-service.html">Terms of Service</a>.
+        Calendar not loading? <a href="${bookingCalendarUrl}" target="_blank" rel="noopener noreferrer">Open it securely</a>.
+      </p>
+    </div>`;
+  document.body.append(bookingModal);
+
+  const bookingPanel = bookingModal.querySelector('.booking-modal-panel');
+  const bookingClose = bookingModal.querySelector('.booking-modal-close');
+  const bookingFrameWrap = bookingModal.querySelector('.booking-modal-frame');
+  const bookingCalendarFrame = bookingModal.querySelector('iframe');
+  let hasLoadedBookingCalendar = false;
+
+  const loadBookingCalendar = () => {
+    if (hasLoadedBookingCalendar) return;
+    hasLoadedBookingCalendar = true;
+    bookingCalendarFrame.addEventListener('load', () => {
+      bookingFrameWrap.classList.add('is-loaded');
+    }, { once: true });
+    bookingCalendarFrame.src = bookingCalendarFrame.dataset.src;
+
+    if (!document.querySelector('script[data-booking-embed]')) {
+      const bookingEmbedScript = document.createElement('script');
+      bookingEmbedScript.src = 'https://link.msgsndr.com/js/form_embed.js';
+      bookingEmbedScript.dataset.bookingEmbed = '';
+      document.body.append(bookingEmbedScript);
+    }
+  };
+
+  const closeBookingModal = () => {
+    if (bookingModal.open) bookingModal.close();
+  };
+
+  bookingTriggers.forEach(trigger => {
+    trigger.addEventListener('click', event => {
+      if (
+        event.button !== 0 ||
+        event.metaKey ||
+        event.ctrlKey ||
+        event.shiftKey ||
+        event.altKey ||
+        typeof bookingModal.showModal !== 'function'
+      ) return;
+
+      event.preventDefault();
+      loadBookingCalendar();
+      if (!bookingModal.open) bookingModal.showModal();
+      document.documentElement.classList.add('booking-modal-open');
+      bookingClose.focus();
+    });
+  });
+
+  bookingClose.addEventListener('click', closeBookingModal);
+  bookingModal.addEventListener('close', () => {
+    document.documentElement.classList.remove('booking-modal-open');
+  });
+  bookingModal.addEventListener('click', event => {
+    if (event.target !== bookingModal) return;
+    const panelBounds = bookingPanel.getBoundingClientRect();
+    const clickedOutsidePanel =
+      event.clientX < panelBounds.left ||
+      event.clientX > panelBounds.right ||
+      event.clientY < panelBounds.top ||
+      event.clientY > panelBounds.bottom;
+    if (clickedOutsidePanel) closeBookingModal();
+  });
+
+  loadBookingCalendar();
+}
