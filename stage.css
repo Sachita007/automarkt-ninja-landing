@@ -75,7 +75,9 @@
 .concept-stage .results-grid{grid-template-columns:1fr;gap:16px}
 .concept-stage .result-card{border:1px solid #c6d1c8;border-radius:14px;background:#fff;box-shadow:0 12px 30px rgba(20,62,32,.06)}
 .concept-stage .result-card:hover{transform:translateY(-3px);border-color:#9eb2a3}
-.concept-stage .vertical-video img{width:100%;height:100%;object-fit:cover;object-position:42% center;background:#080a08}
+.concept-stage .vertical-video video,.concept-stage .vertical-video img{display:block;width:100%;height:100%;object-fit:cover;background:#080a08}
+.concept-stage .vertical-video video{object-position:center}
+.concept-stage .vertical-video img{object-position:42% center}
 .concept-stage .number{border-radius:999px;background:#dff5e5;color:#08713a}
 .concept-stage .result-copy strong{background:#e2f6e7;color:#08713a}
 .concept-stage .section-tint{background:#173724;color:#fff}
@@ -159,7 +161,6 @@
   .concept-stage .results-grid{grid-template-columns:repeat(4,minmax(0,1fr));max-width:none;margin-inline:0;gap:16px}
   .concept-stage .result-card{display:block;overflow:hidden}
   .concept-stage .vertical-video{width:100%;height:auto;min-height:0;aspect-ratio:9/16;background:#080a08}
-  .concept-stage .vertical-video iframe,.concept-stage .vertical-video img{width:100%;height:100%}
   .concept-stage .result-copy{display:block;min-width:0;padding:19px}
   .concept-stage .number{display:inline-flex;width:max-content;align-self:auto}
   .concept-stage .result-copy h3{font-size:22px;line-height:1.08}
@@ -203,7 +204,6 @@
   .concept-stage .result-card{display:block;width:100%;overflow:hidden;border-radius:12px;scroll-snap-align:none}
   .concept-stage .result-card:hover{transform:none}
   .concept-stage .vertical-video{width:100%;height:auto;min-height:0;aspect-ratio:9/16;background:#080a08}
-  .concept-stage .vertical-video iframe,.concept-stage .vertical-video img{width:100%;height:100%}
   .concept-stage .result-copy{min-width:0;padding:20px}
   .concept-stage .number{margin-bottom:14px;padding:6px 8px;border-radius:6px;font-size:10px}
   .concept-stage .result-copy h3{font-size:22px}
