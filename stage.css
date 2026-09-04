@@ -269,6 +269,8 @@ html.booking-modal-open{overflow:hidden}
   .booking-modal-header p{font-size:9px}
   .booking-modal-header h2{font-size:22px}
   .booking-modal-close{flex-basis:40px;width:40px;height:40px;font-size:26px}
-  .booking-modal-frame,.booking-modal-frame iframe{min-height:680px}
+  .booking-modal-frame{min-height:min(560px,calc(100dvh - 152px))}
+  .booking-modal-frame iframe{height:min(560px,calc(100dvh - 152px));min-height:0}
+  .booking-modal-frame.is-loaded{min-height:0}
   .booking-modal-note{padding:14px 16px;font-size:11px}
 }
