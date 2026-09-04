@@ -5,7 +5,7 @@ LABEL org.opencontainers.image.description="Automarkt Ninja static landing page"
 
 COPY nginx.conf /etc/nginx/conf.d/default.conf
 
-COPY index-v2.html /usr/share/nginx/html/index.html
+COPY index-dark.html /usr/share/nginx/html/index.html
 COPY index-v2.html /usr/share/nginx/html/index-v2.html
 COPY index-dark.html /usr/share/nginx/html/index-dark.html
 COPY booking.html /usr/share/nginx/html/booking.html

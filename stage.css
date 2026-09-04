@@ -245,6 +245,7 @@
 /* Booking calendar modal */
 html.booking-modal-open{overflow:hidden}
 .booking-modal{width:min(920px,calc(100% - 32px));max-width:none;max-height:calc(100dvh - 32px);margin:auto;padding:0;overflow:visible;border:0;border-radius:20px;background:transparent;color:#121813;box-shadow:0 30px 90px rgba(4,20,10,.34)}
+.booking-modal:not([open]){display:block;position:fixed;inset:0 auto auto -10000px;margin:0;visibility:hidden;pointer-events:none}
 .booking-modal::backdrop{background:rgba(4,14,8,.72);backdrop-filter:blur(7px)}
 .booking-modal-panel{max-height:calc(100dvh - 32px);overflow-y:auto;border:1px solid rgba(32,66,43,.16);border-radius:20px;background:#f7f8f5}
 .booking-modal-header{position:sticky;top:0;z-index:3;display:flex;align-items:center;justify-content:space-between;gap:24px;padding:22px 24px;border-bottom:1px solid #dfe4dc;background:rgba(255,255,255,.96);backdrop-filter:blur(14px)}

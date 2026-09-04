@@ -143,6 +143,7 @@ if (bookingTriggers.length) {
 
     if (!document.querySelector('script[data-booking-embed]')) {
       const bookingEmbedScript = document.createElement('script');
+      bookingEmbedScript.fetchPriority = 'high';
       bookingEmbedScript.src = 'https://link.msgsndr.com/js/form_embed.js';
       bookingEmbedScript.dataset.bookingEmbed = '';
       document.body.append(bookingEmbedScript);

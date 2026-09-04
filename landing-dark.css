@@ -263,6 +263,23 @@
   box-shadow: 0 20px 46px rgba(0, 0, 0, 0.26);
 }
 
+.concept-stage.concept-dark .instagram-result-card img {
+  border-color: #42634e;
+}
+
+.concept-stage.concept-dark .instagram-result-copy h3 {
+  color: #fff;
+}
+
+.concept-stage.concept-dark .instagram-result-copy p {
+  color: #a7b8ad;
+}
+
+.concept-stage.concept-dark .instagram-result-copy strong {
+  background: #173d27;
+  color: #a6ffc4;
+}
+
 .concept-stage.concept-dark .instagram-showcase .button-light {
   background: #d9ff64;
   color: #173724;
