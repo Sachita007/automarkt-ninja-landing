@@ -450,6 +450,13 @@
   text-transform: none;
 }
 
+.selected-hero-page.concept-stage.concept-dark .hero-selected .headline-highlight {
+  color: #d9ff64;
+  font-weight: 800;
+  text-shadow: 0 0 28px rgba(217, 255, 100, 0.28);
+  white-space: nowrap;
+}
+
 .selected-hero-page.concept-stage.concept-dark .hero-selected .hero-subheading {
   width: min(100%, 900px);
   margin: 26px 0 0;
@@ -516,6 +523,42 @@
     line-height: 1.06;
   }
 }
+
+.mobile-sticky-cta {
+  display: none;
+}
+
+@media (max-width: 699px) {
+  body.selected-hero-page {
+    padding-bottom: calc(88px + env(safe-area-inset-bottom));
+  }
+
+  .concept-stage.concept-dark .hero-selected .hero-actions .button {
+    display: none;
+  }
+
+  .mobile-sticky-cta {
+    position: fixed;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    z-index: 30;
+    display: block;
+    padding: 18px 12px calc(10px + env(safe-area-inset-bottom));
+    background: linear-gradient(180deg, rgba(7, 17, 13, 0), rgba(7, 17, 13, 0.96) 28%);
+  }
+
+  .mobile-sticky-cta .button {
+    display: flex;
+    width: 100%;
+    min-height: 64px;
+    padding: 16px 24px;
+    border-radius: 16px;
+    font-size: 18px;
+    box-shadow: 0 12px 34px rgba(0, 0, 0, 0.38);
+  }
+}
+
 
 /* Booking calendar modal */
 .concept-stage.concept-dark .booking-modal{color:#f3f8f4;box-shadow:0 34px 100px rgba(0,0,0,.62)}
