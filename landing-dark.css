@@ -522,6 +522,29 @@
     font-size: clamp(34px, 9vw, 42px);
     line-height: 1.06;
   }
+
+  .selected-hero-page.concept-stage.concept-dark .hero-selected .hero-subheading {
+    font-size: clamp(12px, 3.6vw, 15px);
+    letter-spacing: -0.035em;
+  }
+
+  .selected-hero-page.concept-stage.concept-dark .hero-selected .hero-subheading span,
+  .selected-hero-page.concept-stage.concept-dark .hero-selected .hero-subheading strong {
+    white-space: nowrap;
+  }
+
+  .selected-hero-page.concept-stage.concept-dark.hero-variant-two .hero-selected .hero-subheading {
+    padding-right: 10px;
+    padding-left: 10px;
+  }
+
+  .selected-hero-page.concept-stage.concept-dark .hero-selected .hero-promise strong {
+    font-size: 13px;
+  }
+
+  .selected-hero-page.concept-stage.concept-dark .hero-selected .hero-promise span {
+    font-size: 14px;
+  }
 }
 
 .mobile-sticky-cta {
