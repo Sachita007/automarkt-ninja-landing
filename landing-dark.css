@@ -446,30 +446,6 @@
   color: inherit;
 }
 
-.selected-hero-page.concept-stage.concept-dark .hero-selected h1 em {
-  text-transform: none;
-}
-
-.selected-hero-page.concept-stage.concept-dark .hero-selected .hero-subheading {
-  width: min(100%, 900px);
-  margin: 26px 0 0;
-  color: #dce7df;
-  font: 700 clamp(20px, 2vw, 28px)/1.3 Manrope, sans-serif;
-  letter-spacing: -0.025em;
-  text-align: center;
-  text-wrap: balance;
-}
-
-.selected-hero-page.concept-stage.concept-dark .hero-selected .hero-subheading span,
-.selected-hero-page.concept-stage.concept-dark .hero-selected .hero-subheading strong {
-  display: block;
-}
-
-.selected-hero-page.concept-stage.concept-dark .hero-selected .hero-subheading strong {
-  margin-top: 6px;
-  color: #b7c6bc;
-}
-
 .selected-hero-page.concept-stage.concept-dark .hero-selected .hero-rule {
   background: linear-gradient(90deg, transparent, rgba(24, 221, 112, 0.5), transparent);
 }
