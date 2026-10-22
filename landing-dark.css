@@ -599,3 +599,337 @@
 .concept-stage.concept-dark .booking-modal-close:hover{border-color:#5d886b;background:#204a32}
 .concept-stage.concept-dark .booking-modal-note{border-top-color:#294234;background:#0b1811;color:#a7b8ad}
 .concept-stage.concept-dark .booking-modal-note a{color:#9af3b9}
+
+/* Featured YouTube episode */
+.concept-stage.concept-dark .youtube-featured {
+  display: grid;
+  grid-template-columns: 1fr;
+  margin-bottom: 22px;
+  overflow: hidden;
+  border: 1px solid #4f7d5d;
+  border-radius: 20px;
+  background:
+    radial-gradient(circle at 100% 0%, rgba(217, 255, 100, 0.12), transparent 42%),
+    #0b1811;
+  box-shadow: 0 0 0 1px rgba(217, 255, 100, 0.06), 0 26px 60px rgba(0, 0, 0, 0.34);
+}
+
+.concept-stage.concept-dark .youtube-featured-media {
+  position: relative;
+  aspect-ratio: 16 / 9;
+  background: #050b08;
+}
+
+.concept-stage.concept-dark .youtube-featured-frame {
+  position: absolute;
+  inset: 0;
+  overflow: hidden;
+  background: #050b08;
+}
+
+.concept-stage.concept-dark .youtube-featured-frame iframe {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  border: 0;
+}
+
+.concept-stage.concept-dark .youtube-featured-poster {
+  position: absolute;
+  inset: 0;
+  display: block;
+  width: 100%;
+  height: 100%;
+  padding: 0;
+  border: 0;
+  background: #050b08;
+  cursor: pointer;
+}
+
+.concept-stage.concept-dark .youtube-featured-poster img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 0.4s ease, filter 0.4s ease;
+}
+
+.concept-stage.concept-dark .youtube-featured-poster:hover img,
+.concept-stage.concept-dark .youtube-featured-poster:focus-visible img {
+  filter: brightness(0.82);
+  transform: scale(1.025);
+}
+
+.concept-stage.concept-dark .youtube-featured-play,
+.concept-stage.concept-dark .video-teaser-play {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  display: grid;
+  place-items: center;
+  width: 84px;
+  height: 84px;
+  border-radius: 50%;
+  background: #18bd62;
+  box-shadow: 0 0 0 10px rgba(24, 189, 98, 0.22), 0 18px 40px rgba(0, 0, 0, 0.45);
+  transform: translate(-50%, -50%);
+  transition: background-color 0.2s ease, transform 0.2s ease;
+}
+
+.concept-stage.concept-dark .youtube-featured-play::before,
+.concept-stage.concept-dark .video-teaser-play::before {
+  content: "";
+  margin-left: 6px;
+  border-top: 14px solid transparent;
+  border-bottom: 14px solid transparent;
+  border-left: 22px solid #07110d;
+}
+
+.concept-stage.concept-dark .youtube-featured-poster:hover .youtube-featured-play {
+  background: #d9ff64;
+  transform: translate(-50%, -50%) scale(1.06);
+}
+
+.concept-stage.concept-dark .youtube-featured-copy {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  justify-content: center;
+  gap: 14px;
+  padding: 26px 24px 28px;
+}
+
+.concept-stage.concept-dark .youtube-featured-badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  margin: 0;
+  padding: 6px 11px;
+  border-radius: 999px;
+  background: rgba(217, 255, 100, 0.12);
+  color: #d9ff64;
+  font-size: 11px;
+  font-weight: 800;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+}
+
+.concept-stage.concept-dark .youtube-featured-badge span {
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  background: #d9ff64;
+  box-shadow: 0 0 0 0 rgba(217, 255, 100, 0.6);
+  animation: featured-pulse 1.8s ease-out infinite;
+}
+
+@keyframes featured-pulse {
+  70% { box-shadow: 0 0 0 9px rgba(217, 255, 100, 0); }
+  100% { box-shadow: 0 0 0 0 rgba(217, 255, 100, 0); }
+}
+
+.concept-stage.concept-dark .youtube-featured-copy h3 {
+  margin: 0;
+  color: #f4f8f5;
+  font: 800 clamp(24px, 2.6vw, 34px)/1.12 Manrope, Inter, sans-serif;
+  letter-spacing: -0.035em;
+}
+
+.concept-stage.concept-dark .youtube-featured-copy > p:not(.youtube-featured-badge) {
+  margin: 0;
+  color: #a8b8ae;
+  font-size: 16px;
+  line-height: 1.6;
+}
+
+.concept-stage.concept-dark .youtube-featured-cta {
+  margin-top: 6px;
+  border: 0;
+  cursor: pointer;
+}
+
+@media (min-width: 900px) {
+  .concept-stage.concept-dark .youtube-featured {
+    grid-template-columns: minmax(0, 1.55fr) minmax(0, 1fr);
+    margin-bottom: 26px;
+  }
+
+  .concept-stage.concept-dark .youtube-featured-copy {
+    padding: 34px 36px;
+  }
+}
+
+/* Featured video keeps playing in a corner mini player */
+.concept-stage.concept-dark .youtube-featured-frame.is-floating {
+  position: fixed;
+  inset: auto 24px 24px auto;
+  z-index: 40;
+  width: 380px;
+  height: auto;
+  aspect-ratio: 16 / 9;
+  border: 1px solid #4f7d5d;
+  border-radius: 14px;
+  box-shadow: 0 24px 60px rgba(0, 0, 0, 0.55);
+  animation: float-in 0.25s ease-out;
+}
+
+@keyframes float-in {
+  from { opacity: 0; transform: translateY(16px); }
+}
+
+.concept-stage.concept-dark .youtube-float-close,
+.concept-stage.concept-dark .video-teaser-close {
+  display: grid;
+  place-items: center;
+  width: 32px;
+  height: 32px;
+  padding: 0;
+  border: 1px solid #375843;
+  border-radius: 50%;
+  background: #173326;
+  color: #f4f8f5;
+  font: 400 22px/1 Inter, sans-serif;
+  cursor: pointer;
+}
+
+.concept-stage.concept-dark .youtube-float-close {
+  position: absolute;
+  top: 8px;
+  right: 8px;
+  z-index: 2;
+}
+
+.concept-stage.concept-dark .youtube-float-close[hidden],
+.concept-stage.concept-dark .video-teaser[hidden] {
+  display: none;
+}
+
+/* "New episode" teaser shown while scrolling, before the video is played */
+.concept-stage.concept-dark .video-teaser {
+  position: fixed;
+  bottom: 24px;
+  left: 24px;
+  z-index: 35;
+  display: flex;
+  align-items: center;
+  gap: 4px;
+  max-width: 380px;
+  padding: 8px 10px 8px 8px;
+  border: 1px solid #4f7d5d;
+  border-radius: 16px;
+  background: rgba(11, 24, 17, 0.96);
+  box-shadow: 0 22px 54px rgba(0, 0, 0, 0.5);
+  backdrop-filter: blur(12px);
+  animation: float-in 0.25s ease-out;
+}
+
+.concept-stage.concept-dark .video-teaser-open {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  min-width: 0;
+  padding: 0;
+  border: 0;
+  background: none;
+  color: inherit;
+  text-align: left;
+  cursor: pointer;
+}
+
+.concept-stage.concept-dark .video-teaser-thumb {
+  position: relative;
+  flex: 0 0 112px;
+  overflow: hidden;
+  aspect-ratio: 16 / 9;
+  border-radius: 10px;
+}
+
+.concept-stage.concept-dark .video-teaser-thumb img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.concept-stage.concept-dark .video-teaser-play {
+  width: 34px;
+  height: 34px;
+  box-shadow: 0 0 0 4px rgba(24, 189, 98, 0.25);
+}
+
+.concept-stage.concept-dark .video-teaser-play::before {
+  margin-left: 3px;
+  border-top-width: 6px;
+  border-bottom-width: 6px;
+  border-left-width: 10px;
+}
+
+.concept-stage.concept-dark .video-teaser-copy {
+  display: grid;
+  gap: 3px;
+  min-width: 0;
+}
+
+.concept-stage.concept-dark .video-teaser-copy small {
+  color: #d9ff64;
+  font-size: 10px;
+  font-weight: 800;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+}
+
+.concept-stage.concept-dark .video-teaser-copy strong {
+  color: #f4f8f5;
+  font: 800 14px/1.3 Manrope, Inter, sans-serif;
+}
+
+.concept-stage.concept-dark .video-teaser-open:hover strong {
+  color: #d9ff64;
+}
+
+.concept-stage.concept-dark .video-teaser-close {
+  flex: 0 0 28px;
+  width: 28px;
+  height: 28px;
+  align-self: flex-start;
+  font-size: 18px;
+}
+
+@media (max-width: 699px) {
+  .concept-stage.concept-dark .youtube-featured-play {
+    width: 64px;
+    height: 64px;
+  }
+
+  .concept-stage.concept-dark .youtube-featured-copy {
+    padding: 22px 18px 24px;
+  }
+
+  .concept-stage.concept-dark .youtube-featured-cta {
+    width: 100%;
+  }
+
+  .concept-stage.concept-dark .youtube-featured-frame.is-floating {
+    right: 12px;
+    bottom: calc(100px + env(safe-area-inset-bottom));
+    width: min(260px, calc(100% - 24px));
+  }
+
+  .concept-stage.concept-dark .video-teaser {
+    right: 12px;
+    bottom: calc(96px + env(safe-area-inset-bottom));
+    left: 12px;
+    max-width: none;
+  }
+
+  .concept-stage.concept-dark .video-teaser-thumb {
+    flex-basis: 96px;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .concept-stage.concept-dark .youtube-featured-badge span,
+  .concept-stage.concept-dark .youtube-featured-frame.is-floating,
+  .concept-stage.concept-dark .video-teaser {
+    animation: none;
+  }
+}

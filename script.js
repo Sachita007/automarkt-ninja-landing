@@ -190,3 +190,134 @@ if (bookingTriggers.length) {
 
   loadBookingCalendar();
 }
+
+const featuredVideo = document.querySelector('#featured-video');
+
+if (featuredVideo) {
+  const videoId = featuredVideo.dataset.videoId;
+  const featuredMedia = featuredVideo.querySelector('.youtube-featured-media');
+  const featuredFrame = featuredVideo.querySelector('.youtube-featured-frame');
+  const featuredPoster = featuredVideo.querySelector('.youtube-featured-poster');
+  const featuredCta = featuredVideo.querySelector('.youtube-featured-cta');
+  const floatClose = featuredVideo.querySelector('.youtube-float-close');
+  const mediaSection = document.querySelector('#media');
+  const hero = document.querySelector('.hero');
+  const teaser = document.querySelector('.video-teaser');
+  const teaserOpen = teaser?.querySelector('.video-teaser-open');
+  const teaserClose = teaser?.querySelector('.video-teaser-close');
+  const teaserStorageKey = 'featured-video-teaser-dismissed';
+
+  let ytPlayer = null;
+  let hasStarted = false;
+  let hasEnded = false;
+  let floatDismissed = false;
+  let mediaInView = false;
+  let sectionInView = false;
+  let teaserDismissed = false;
+
+  try {
+    teaserDismissed = sessionStorage.getItem(teaserStorageKey) === '1';
+  } catch (_) {}
+
+  const updateFloating = () => {
+    const shouldFloat = hasStarted && !hasEnded && !floatDismissed && !mediaInView;
+    featuredFrame.classList.toggle('is-floating', shouldFloat);
+    floatClose.hidden = !shouldFloat;
+  };
+
+  const updateTeaser = () => {
+    if (!teaser) return;
+    const pastHero = hero ? hero.getBoundingClientRect().bottom < 0 : window.scrollY > 600;
+    teaser.hidden = hasStarted || teaserDismissed || sectionInView || !pastHero;
+  };
+
+  const connectPlayerApi = iframe => {
+    const attach = () => {
+      ytPlayer = new YT.Player(iframe, {
+        events: {
+          onStateChange: event => {
+            if (event.data === YT.PlayerState.PLAYING) {
+              hasEnded = false;
+              floatDismissed = false;
+            }
+            if (event.data === YT.PlayerState.ENDED) hasEnded = true;
+            updateFloating();
+          }
+        }
+      });
+    };
+
+    if (window.YT?.Player) return attach();
+    const previousReady = window.onYouTubeIframeAPIReady;
+    window.onYouTubeIframeAPIReady = () => {
+      previousReady?.();
+      attach();
+    };
+    if (!document.querySelector('script[data-youtube-api]')) {
+      const apiScript = document.createElement('script');
+      apiScript.src = 'https://www.youtube.com/iframe_api';
+      apiScript.dataset.youtubeApi = '';
+      document.body.append(apiScript);
+    }
+  };
+
+  const playFeaturedVideo = () => {
+    if (hasStarted) {
+      ytPlayer?.playVideo?.();
+      return;
+    }
+    hasStarted = true;
+    const params = new URLSearchParams({ rel: '0', autoplay: '1', playsinline: '1', enablejsapi: '1' });
+    if (location.protocol.startsWith('http')) params.set('origin', location.origin);
+    const iframe = document.createElement('iframe');
+    iframe.src = `https://www.youtube-nocookie.com/embed/${videoId}?${params}`;
+    iframe.title = featuredPoster.getAttribute('aria-label').replace('Play video: ', '');
+    iframe.allow = 'accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share';
+    iframe.allowFullscreen = true;
+    featuredPoster.replaceWith(iframe);
+    connectPlayerApi(iframe);
+    updateTeaser();
+    updateFloating();
+  };
+
+  featuredPoster.addEventListener('click', playFeaturedVideo);
+  featuredCta?.addEventListener('click', playFeaturedVideo);
+
+  floatClose.addEventListener('click', () => {
+    ytPlayer?.pauseVideo?.();
+    floatDismissed = true;
+    updateFloating();
+  });
+
+  teaserOpen?.addEventListener('click', () => {
+    featuredVideo.scrollIntoView({ behavior: 'smooth', block: 'center' });
+    playFeaturedVideo();
+  });
+
+  teaserClose?.addEventListener('click', () => {
+    teaserDismissed = true;
+    try {
+      sessionStorage.setItem(teaserStorageKey, '1');
+    } catch (_) {}
+    updateTeaser();
+  });
+
+  if ('IntersectionObserver' in window) {
+    new IntersectionObserver(([entry]) => {
+      mediaInView = entry.isIntersecting;
+      updateFloating();
+    }, { threshold: 0.35 }).observe(featuredMedia);
+
+    if (mediaSection) {
+      new IntersectionObserver(([entry]) => {
+        sectionInView = entry.isIntersecting;
+        updateTeaser();
+      }).observe(mediaSection);
+    }
+  } else {
+    mediaInView = true;
+  }
+
+  window.addEventListener('scroll', updateTeaser, { passive: true });
+  updateTeaser();
+}
